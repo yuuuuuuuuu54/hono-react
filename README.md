@@ -1,10 +1,16 @@
 # hono-react
 
-* npm run dev - フロントエンドとバックエンドの両方を同時に開発モードで起動
-* npm run build - 両方のパッケージをビルド
-* npm run start - バックエンドサーバーを起動
-* また、以下のようなコマンドも使用可能です：
-* npm install <package> --workspace=api - バックエンドにパッケージをインストール
-* npm install <package> --workspace=frontend - フロントエンドにパッケージをインストール
-* npm install <package> -w api - バックエンドにパッケージをインストール（短縮形）
-* npm install <package> -w frontend - フロントエンドにパッケージをインストール（短縮形）
+それぞれのサービスの立ち上げ
+## frontend
+```
+npm run dev
+```
+http://localhost:5173
+で動作する。環境によってはポートの使用状況などにより異なるかもしれない。
+
+## backend
+```
+npm run dev
+```
+http://localhost:3000
+で起動している。これもポートの使用状況で番号は異なるかもしれない。

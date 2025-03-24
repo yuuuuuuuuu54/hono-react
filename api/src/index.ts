@@ -1,14 +1,15 @@
+import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { handle } from 'hono/vercel'
 
-export const config = {
-  runtime: 'edge'
-}
-
-const app = new Hono().basePath('/api')
+const app = new Hono()
 
 app.get('/', (c) => {
-  return c.json({ message: 'Hello Hono!' })
+  return c.text('Hello Hono!')
 })
 
-export default handle(app)
+serve({
+  fetch: app.fetch,
+  port: 3000
+}, (info) => {
+  console.log(`Server is running on http://localhost:${info.port}`)
+})
