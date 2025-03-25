@@ -1,7 +1,10 @@
 import { serve } from '@hono/node-server'
+import { drizzle } from 'drizzle-orm/singlestore'
 import { Hono } from 'hono'
 
 const app = new Hono()
+
+const db = drizzle(process.env.DATABASE_URL!);
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')
